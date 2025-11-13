@@ -1,27 +1,42 @@
 package collection;
-
 import java.util.ArrayList;
 
 public class ArrayListExample {
     public static void main(String[] args) {
-        ArrayList<String> fruits = new ArrayList<>();
 
-        // Adding elements to the ArrayList
-        fruits.add("Apple");
-        fruits.add("Banana");
-        fruits.add("Cherry");
+        // Create ArrayList
+        ArrayList<String> list = new ArrayList<>();
 
-        // Accessing elements from the ArrayList
-        System.out.println("First fruit: " + fruits.get(0));
+        // Add elements
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+        list.add(1, "JavaScript"); // Insert at index
 
-        // Removing an element from the ArrayList
-        fruits.remove("Banana");
+        // Access elements
+        System.out.println("Element at index 0: " + list.get(0));
+        System.out.println("Size: " + list.size());
 
-        // Iterating over the ArrayList
-        System.out.println("Fruits in the list:");
-        for (String fruit : fruits) {
-            System.out.println(fruit);
+        // Check if contains
+        System.out.println("Contains Java: " + list.contains("Java"));
+
+        // Update element
+        list.set(2, "Go");
+
+        // Remove elements
+        list.remove("Python");
+        list.remove(0); // Remove by index
+
+        // Iterate
+        for (String lang : list) {
+            System.out.println(lang);
         }
-    }
 
+        // Check if empty
+        System.out.println("Is empty: " + list.isEmpty());
+
+        // Clear all
+        list.clear();
+        System.out.println("After clear, size: " + list.size());
+    }
 }
