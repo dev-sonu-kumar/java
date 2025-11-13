@@ -10,7 +10,7 @@ public class Hello {
         int id = 10001;
         double salary = 12.44;
         float workTime = 144.1f;
-        System.out.println("age : "+age);
+        System.out.println("age: "+age);
     }
 
 }
