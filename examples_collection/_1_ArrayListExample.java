@@ -1,7 +1,7 @@
-package collection;
+package examples_collection;
 import java.util.ArrayList;
 
-public class ArrayListExample {
+public class _1_ArrayListExample {
     public static void main(String[] args) {
 
         // Create ArrayList
