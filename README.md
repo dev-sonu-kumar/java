@@ -114,6 +114,12 @@
 
 ## 💻 Programming Practice
 
+### 🎯 Complete Interview Preparation Guides
+- **[Complete LeetCode 100 Examples](examples_programming_practice/examples_leetcode/Complete_LeetCode_100_Examples.md)** - Master all 100 most important LeetCode problems for FAANG interviews
+  - 📁 Package: `examples_leetcode/` (100 optimized solutions with patterns and strategies)
+- **[Complete HackerRank 100 Examples](examples_programming_practice/examples_hackerrank/Complete_HackerRank_100_Examples.md)** - Master all 100 essential HackerRank problems for technical interviews
+  - 📁 Package: `examples_hackerrank/` (100 efficient solutions with mathematical focus)
+
 ### Structured Practice Problems
 - **[Basic Programming Guide](examples_programming_practice/examples_basic/BasicProgrammingGuide.md)** - Number operations, patterns
 - **[Array Programming Guide](examples_programming_practice/examples_array/ArrayProgrammingGuide.md)** - Array manipulation, sorting
@@ -129,27 +135,36 @@
 1. Start with **[Java Basics Guide](examples_basic/JavaBasicsGuide.md)**
 2. Move to **[OOP Examples](examples_oops/)**
 3. Practice with **[Programming Practice](examples_programming_practice/)**
+4. Begin **[HackerRank Problems](examples_programming_practice/examples_hackerrank/Complete_HackerRank_100_Examples.md)** (Problems 1-30)
 
 ### For Intermediate Developers
 1. Review **[Collections](examples_collection/CollectionGuide.md)** and **[Maps/Sets](examples_collection_map/MapSetQueueGuide.md)**
 2. Master **[Java 8 Features](examples_java_8/Java8Guide.md)**
 3. Learn **[Exception Handling](examples_exception_handling/ExceptionHandlingGuide.md)**
+4. Practice **[LeetCode Problems](examples_programming_practice/examples_leetcode/Complete_LeetCode_100_Examples.md)** (Problems 1-60)
 
 ### For Advanced Developers
 1. Deep dive into **[Multithreading](examples_multithreading/MultithreadingGuide.md)**
-2. Practice **[Advanced Programming](examples_programming_practice/examples_advanced/AdvancedProgrammingGuide.md)**
-3. Focus on system design and architecture patterns
+2. Master **[Complete LeetCode Guide](examples_programming_practice/examples_leetcode/Complete_LeetCode_100_Examples.md)** (All 100 problems)
+3. Complete **[HackerRank Advanced Problems](examples_programming_practice/examples_hackerrank/Complete_HackerRank_100_Examples.md)** (Problems 51-100)
+4. Focus on system design and architecture patterns
 
 ---
 
 ## Resources
 
+### 📚 Documentation & Learning
 - Official Java Documentation
 - Spring.io Guides
 - Kubernetes Official Docs
 - AWS Certified Solutions Architect course
 - System Design Primer (GitHub)
-- LeetCode for coding practice
+
+### 🎯 Interview Preparation
+- **[Complete LeetCode 100 Examples](examples_programming_practice/examples_leetcode/Complete_LeetCode_100_Examples.md)** - FAANG interview preparation
+- **[Complete HackerRank 100 Examples](examples_programming_practice/examples_hackerrank/Complete_HackerRank_100_Examples.md)** - Technical interview mastery
+- LeetCode Premium for company-specific problems
+- HackerRank for competitive programming practice
 
 # Career Roadmap for Experienced Java Developer (7 years) Switching Jobs
 
@@ -220,10 +235,12 @@
 
 ## Step 7: Prepare for Interviews
 
-- Practice **Java coding problems** (LeetCode, HackerRank).
-- Prepare system design basics and real-world microservices design questions.
-- Mock interviews for behavioral questions.
-- Prepare to explain your past projects and challenges.
+- **Master Coding Problems:**
+  - Complete **[LeetCode 100 Examples](examples_programming_practice/examples_leetcode/Complete_LeetCode_100_Examples.md)** for FAANG interviews
+  - Practice **[HackerRank 100 Examples](examples_programming_practice/examples_hackerrank/Complete_HackerRank_100_Examples.md)** for technical interviews
+- **System Design:** Prepare basics and real-world microservices design questions
+- **Mock Interviews:** Practice behavioral questions and communication
+- **Project Explanation:** Prepare to explain your past projects and challenges
 
 ## Step 8: Job Search & Networking
 
