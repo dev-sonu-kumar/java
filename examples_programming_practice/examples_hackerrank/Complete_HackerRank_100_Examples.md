@@ -23,7 +23,19 @@
 ## Arrays & Basic Math (1-20)
 
 ### 1. Simple Array Sum
-**Problem**: Sum all elements in array
+**Problem**: Given an array of integers, find the sum of its elements.
+
+**Input Format**: 
+- First line contains an integer n, the size of the array
+- Second line contains n space-separated integers representing the array elements
+
+**Output Format**: Print the sum of the array's elements as a single integer
+
+**Example**:
+- Input: [1, 2, 3, 4, 10, 11]
+- Output: 31
+
+**Solution**:
 ```java
 public static int simpleArraySum(int[] ar) {
     int sum = 0;
@@ -33,9 +45,29 @@ public static int simpleArraySum(int[] ar) {
     return sum;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 2. Compare the Triplets
-**Problem**: Compare two rating triplets
+**Problem**: Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
+
+The rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).
+
+The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+- If a[i] > b[i], then Alice is awarded 1 point
+- If a[i] < b[i], then Bob is awarded 1 point  
+- If a[i] = b[i], then neither person receives a point
+
+**Input Format**: 
+- First line contains 3 space-separated integers, a[0], a[1], and a[2], the respective values in triplet a
+- Second line contains 3 space-separated integers, b[0], b[1], and b[2], the respective values in triplet b
+
+**Output Format**: Return an array of two integers, the first being Alice's score and the second being Bob's score
+
+**Example**:
+- Input: a = [5, 6, 7], b = [3, 6, 10]
+- Output: [1, 1] (Alice wins first comparison, Bob wins third, second is tie)
+
+**Solution**:
 ```java
 public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
     int aliceScore = 0, bobScore = 0;
@@ -46,9 +78,26 @@ public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
     return Arrays.asList(aliceScore, bobScore);
 }
 ```
+**Time Complexity**: O(1) | **Space Complexity**: O(1)
 
 ### 3. A Very Big Sum
-**Problem**: Sum large integers
+**Problem**: In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+**Input Format**: 
+- First line contains an integer n, the number of elements in the array
+- Second line contains n space-separated integers representing the array's elements
+
+**Output Format**: Return the sum of the array's elements as a single integer
+
+**Constraints**: 
+- 1 ≤ n ≤ 10
+- 0 ≤ ar[i] ≤ 10^10
+
+**Example**:
+- Input: [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+- Output: 5000000015
+
+**Solution**:
 ```java
 public static long aVeryBigSum(long[] ar) {
     long sum = 0;
@@ -58,9 +107,32 @@ public static long aVeryBigSum(long[] ar) {
     return sum;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 4. Diagonal Difference
-**Problem**: Absolute difference of matrix diagonals
+**Problem**: Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix arr is shown below:
+```
+1 2 3
+4 5 6
+9 8 9
+```
+The left-to-right diagonal = 1 + 5 + 9 = 15. The right-to-left diagonal = 3 + 5 + 9 = 17. Their absolute difference is |15 - 17| = 2.
+
+**Input Format**: 
+- First line contains a single integer, n, the number of rows and columns in the square matrix arr
+- Each of the next n lines describes a row, arr[i], and consists of n space-separated integers arr[i][j]
+
+**Output Format**: Return the absolute difference between the sums of the matrix's two diagonals as a single integer
+
+**Example**:
+- Input: [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
+- Primary diagonal: 11 + 5 + (-12) = 4
+- Secondary diagonal: 4 + 5 + 10 = 19
+- Output: |4 - 19| = 15
+
+**Solution**:
 ```java
 public static int diagonalDifference(List<List<Integer>> arr) {
     int n = arr.size();
@@ -74,9 +146,27 @@ public static int diagonalDifference(List<List<Integer>> arr) {
     return Math.abs(primarySum - secondarySum);
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 5. Plus Minus
-**Problem**: Calculate ratios of positive, negative, zero
+**Problem**: Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with 6 places after the decimal.
+
+**Input Format**: 
+- First line contains an integer, n, the size of the array
+- Second line contains n space-separated integers that describe arr[i]
+
+**Output Format**: Print the following 3 lines, each to 6 decimals:
+1. Proportion of positive values
+2. Proportion of negative values  
+3. Proportion of zeros
+
+**Example**:
+- Input: [-4, 3, -9, 0, 4, 1]
+- Positive: 3/6 = 0.500000
+- Negative: 2/6 = 0.333333
+- Zero: 1/6 = 0.166667
+
+**Solution**:
 ```java
 public static void plusMinus(int[] arr) {
     int positive = 0, negative = 0, zero = 0;
@@ -93,9 +183,39 @@ public static void plusMinus(int[] arr) {
     System.out.printf("%.6f%n", (double) zero / n);
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 6. Staircase
-**Problem**: Print staircase pattern
+**Problem**: Staircase detail: This is a staircase of size n = 4:
+```
+   #
+  ##
+ ###
+####
+```
+Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a program that prints a staircase of size n.
+
+**Input Format**: A single integer, n, denoting the size of the staircase
+
+**Output Format**: Print a staircase of size n using # symbols and spaces
+
+**Constraints**: 0 < n ≤ 100
+
+**Example**:
+- Input: n = 6
+- Output:
+```
+     #
+    ##
+   ###
+  ####
+ #####
+######
+```
+
+**Solution**:
 ```java
 public static void staircase(int n) {
     for (int i = 1; i <= n; i++) {
@@ -109,9 +229,24 @@ public static void staircase(int n) {
     }
 }
 ```
+**Time Complexity**: O(n²) | **Space Complexity**: O(1)
 
 ### 7. Mini-Max Sum
-**Problem**: Find min and max sum of 4 elements
+**Problem**: Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+**Input Format**: A single line of five space-separated integers
+
+**Output Format**: Print two space-separated long integers denoting the respective minimum and maximum values that can be calculated by summing exactly four of the five integers
+
+**Constraints**: 1 ≤ arr[i] ≤ 10^9
+
+**Example**:
+- Input: [1, 2, 3, 4, 5]
+- The minimum sum is 1 + 2 + 3 + 4 = 10
+- The maximum sum is 2 + 3 + 4 + 5 = 14
+- Output: 10 14
+
+**Solution**:
 ```java
 public static void miniMaxSum(int[] arr) {
     long totalSum = 0;
@@ -126,18 +261,67 @@ public static void miniMaxSum(int[] arr) {
     System.out.println((totalSum - max) + " " + (totalSum - min));
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 8. Birthday Cake Candles
-**Problem**: Count tallest candles
+**Problem**: You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest candles. Count how many candles are tallest.
+
+**Input Format**: 
+- First line contains a single integer, n, the size of candles
+- Second line contains n space-separated integers, where each integer i describes the height of candle i
+
+**Output Format**: Return the number of candles that are tallest
+
+**Constraints**: 
+- 1 ≤ n ≤ 10^5
+- 1 ≤ candles[i] ≤ 10^7
+
+**Example**:
+- Input: [4, 4, 1, 3]
+- The maximum height is 4, and there are 2 candles of height 4
+- Output: 2
+
+**Solution**:
 ```java
 public static int birthdayCakeCandles(int[] candles) {
     int maxHeight = Arrays.stream(candles).max().getAsInt();
     return (int) Arrays.stream(candles).filter(h -> h == maxHeight).count();
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1) 1 ≤ candles[i] ≤ 10^7
+
+**Example**:
+- Input: [4, 4, 1, 3]
+- The maximum height is 4, and there are 2 candles of height 4
+- Output: 2
+
+**Solution**:
+```java
+public static int birthdayCakeCandles(int[] candles) {
+    int maxHeight = Arrays.stream(candles).max().getAsInt();
+    return (int) Arrays.stream(candles).filter(h -> h == maxHeight).count();
+}
+```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 9. Time Conversion
-**Problem**: Convert 12-hour to 24-hour format
+**Problem**: Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Note: 
+- 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock
+
+**Input Format**: A single string s that represents a time in 12-hour clock format (i.e.: hh:mm:ssAM or hh:mm:ssPM)
+
+**Output Format**: Convert and print the given time in 24-hour format, where 00 ≤ hh ≤ 23
+
+**Example**:
+- Input: "07:05:45PM"
+- Output: "19:05:45"
+- Input: "12:01:00AM"
+- Output: "00:01:00"
+
+**Solution**:
 ```java
 public static String timeConversion(String s) {
     String period = s.substring(8);
@@ -155,9 +339,32 @@ public static String timeConversion(String s) {
     return String.format("%02d:%s:%s", hour, parts[1], parts[2]);
 }
 ```
+**Time Complexity**: O(1) | **Space Complexity**: O(1)
 
 ### 10. Grading Students
-**Problem**: Round grades based on rules
+**Problem**: HackerLand University has the following grading policy:
+- Every student receives a grade in the inclusive range from 0 to 100
+- Any grade less than 40 is a failing grade
+
+Sam is a professor at the university and likes to round each student's grade according to these rules:
+- If the difference between the grade and the next multiple of 5 is less than 3, round the grade up to the next multiple of 5
+- If the value of the grade is less than 38, no rounding occurs as the result will still be a failing grade
+
+**Input Format**: 
+- First line contains a single integer, n, the number of students
+- Each line i of the n subsequent lines contains a single integer, grades[i]
+
+**Output Format**: For each grades[i], print the rounded grade on a new line
+
+**Example**:
+- Input: [73, 67, 38, 33]
+- 73 rounds to 75 (next multiple of 5 is 75, difference is 2 < 3)
+- 67 rounds to 67 (next multiple of 5 is 70, difference is 3, no rounding)
+- 38 rounds to 40 (next multiple of 5 is 40, difference is 2 < 3)
+- 33 stays 33 (grade < 38, no rounding)
+- Output: [75, 67, 40, 33]
+
+**Solution**:
 ```java
 public static List<Integer> gradingStudents(List<Integer> grades) {
     List<Integer> result = new ArrayList<>();
@@ -178,9 +385,38 @@ public static List<Integer> gradingStudents(List<Integer> grades) {
     return result;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(n)
 
 ### 11. Apple and Orange
-**Problem**: Count fruits falling on house
+**Problem**: Sam's house has an apple tree and an orange tree that yield an abundance of fruit. Using the information given below, determine the number of apples and oranges that land on Sam's house.
+
+In the diagram below:
+- The red region denotes the house, where s is the start point, and t is the endpoint
+- The apple tree is to the left of the house, and the orange tree is to its right
+- Assume the trees are located on a single point, where the apple tree is at point a, and the orange tree is at point b
+- When a fruit falls from its tree, it lands d units of distance from its tree of origin along the x-axis. *A negative value of d means the fruit fell d units to the tree's left, and a positive value of d means the fruit fell d units to the tree's right.*
+
+**Input Format**: 
+- First line contains two space-separated integers denoting the respective values of s and t
+- Second line contains two space-separated integers denoting the respective values of a and b
+- Third line contains two space-separated integers denoting the respective values of m and n
+- Fourth line contains m space-separated integers denoting the respective distances that each apple falls from point a
+- Fifth line contains n space-separated integers denoting the respective distances that each orange falls from point b
+
+**Output Format**: Print two integers on two different lines:
+1. The first integer: the number of apples that fall on Sam's house
+2. The second integer: the number of oranges that fall on Sam's house
+
+**Example**:
+- House location: s = 7, t = 11
+- Apple tree at a = 5, Orange tree at b = 15
+- Apples fall at distances: [-2, 2, 1] from apple tree
+- Oranges fall at distances: [5, -6] from orange tree
+- Apple positions: [3, 7, 6], only 7 lands on house
+- Orange positions: [20, 9], only 9 lands on house
+- Output: 1 apple, 1 orange
+
+**Solution**:
 ```java
 public static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
     int appleCount = 0, orangeCount = 0;
@@ -199,9 +435,31 @@ public static void countApplesAndOranges(int s, int t, int a, int b, int[] apple
     System.out.println(orangeCount);
 }
 ```
+**Time Complexity**: O(m + n) | **Space Complexity**: O(1)
 
-### 12. Number Line Jumps
-**Problem**: Check if two kangaroos meet
+### 12. Number Line Jumps (Kangaroo)
+**Problem**: You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).
+
+- The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump
+- The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump
+
+You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.
+
+**Input Format**: A single line of four space-separated integers denoting the respective values of x1, v1, x2, and v2
+
+**Output Format**: Print YES if they can land on the same location at the same time, otherwise print NO
+
+**Constraints**: 
+- 0 ≤ x1 < x2 ≤ 10000
+- 1 ≤ v1 ≤ 10000
+- 1 ≤ v2 ≤ 10000
+
+**Example**:
+- Input: x1 = 0, v1 = 3, x2 = 4, v2 = 2
+- After 4 jumps: Kangaroo 1 at 0 + 3*4 = 12, Kangaroo 2 at 4 + 2*4 = 12
+- Output: YES
+
+**Solution**:
 ```java
 public static String kangaroo(int x1, int v1, int x2, int v2) {
     if (v1 == v2) {
@@ -215,9 +473,31 @@ public static String kangaroo(int x1, int v1, int x2, int v2) {
     return "NO";
 }
 ```
+**Time Complexity**: O(1) | **Space Complexity**: O(1)
 
 ### 13. Between Two Sets
-**Problem**: Find numbers between two arrays
+**Problem**: There will be two arrays of integers. Determine all integers that satisfy the following two conditions:
+1. The elements of the first array are all factors of the integer being considered
+2. The integer being considered is a factor of all elements of the second array
+
+These numbers are referred to as being between the two arrays. Determine how many such numbers exist.
+
+**Input Format**: 
+- First line contains two space-separated integers, n and m, the sizes of the respective arrays
+- Second line contains n distinct space-separated integers a[i] where 0 ≤ i < n
+- Third line contains m distinct space-separated integers b[j] where 0 ≤ j < m
+
+**Output Format**: Return the number of integers that are betwen the sets
+
+**Example**:
+- Input: a = [2, 4], b = [16, 32, 96]
+- Numbers between sets: 4, 8, 16
+- 4: All elements in a (2,4) divide 4, and 4 divides all elements in b (16,32,96)
+- 8: All elements in a (2,4) divide 8, and 8 divides all elements in b (16,32,96)
+- 16: All elements in a (2,4) divide 16, and 16 divides all elements in b (16,32,96)
+- Output: 3
+
+**Solution**:
 ```java
 public static int getTotalX(List<Integer> a, List<Integer> b) {
     int lcm = a.get(0);
@@ -246,9 +526,31 @@ private static int lcm(int a, int b) {
     return a * b / gcd(a, b);
 }
 ```
+**Time Complexity**: O(n + m + gcd/lcm) | **Space Complexity**: O(1)
 
 ### 14. Breaking the Records
-**Problem**: Count record-breaking scores
+**Problem**: Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+
+**Input Format**: 
+- First line contains an integer n, the number of games
+- Second line contains n space-separated integers describing the respective values of score[i]
+
+**Output Format**: Return an integer array containing the numbers of times she broke her records. Index 0 is for breaking most points records, and index 1 is for breaking least points records
+
+**Example**:
+- Input: [10, 5, 20, 20, 4, 5, 2, 25, 1]
+- Game 0: score = 10, max = 10, min = 10
+- Game 1: score = 5, max = 10, min = 5 (min record broken)
+- Game 2: score = 20, max = 20 (max record broken), min = 5
+- Game 3: score = 20, max = 20, min = 5
+- Game 4: score = 4, max = 20, min = 4 (min record broken)
+- Game 5: score = 5, max = 20, min = 4
+- Game 6: score = 2, max = 20, min = 2 (min record broken)
+- Game 7: score = 25, max = 25 (max record broken), min = 2
+- Game 8: score = 1, max = 25, min = 1 (min record broken)
+- Output: [2, 4] (2 max records broken, 4 min records broken)
+
+**Solution**:
 ```java
 public static int[] breakingRecords(int[] scores) {
     int maxCount = 0, minCount = 0;
@@ -267,9 +569,34 @@ public static int[] breakingRecords(int[] scores) {
     return new int[]{maxCount, minCount};
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
-### 15. Subarray Division
-**Problem**: Count chocolate bar segments
+### 15. Subarray Division (Birthday Chocolate)
+**Problem**: Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
+
+Lily decides to share a contiguous segment of the bar selected such that:
+- The length of the segment matches Ron's birth month, and
+- The sum of the integers on the squares is equal to his birth day
+
+Determine how many ways she can divide the chocolate.
+
+**Input Format**: 
+- First line contains an integer n, the number of squares in the chocolate bar
+- Second line contains n space-separated integers s[i], the numbers on the chocolate squares s = [s[0], s[1], ..., s[n-1]]
+- Third line contains two space-separated integers, d and m, Ron's birth day and birth month
+
+**Output Format**: Return the integer representing the number of ways Lily can divide the chocolate bar
+
+**Example**:
+- Input: s = [1, 2, 1, 3, 2], d = 3, m = 2
+- Lily wants to find segments of length 2 that sum to 3
+- Segment [1, 2]: sum = 3 ✓
+- Segment [2, 1]: sum = 3 ✓
+- Segment [1, 3]: sum = 4 ✗
+- Segment [3, 2]: sum = 5 ✗
+- Output: 2
+
+**Solution**:
 ```java
 public static int birthday(List<Integer> s, int d, int m) {
     int count = 0;
@@ -285,9 +612,29 @@ public static int birthday(List<Integer> s, int d, int m) {
     return count;
 }
 ```
+**Time Complexity**: O(n × m) | **Space Complexity**: O(1)
 
 ### 16. Divisible Sum Pairs
-**Problem**: Count pairs with divisible sum
+**Problem**: Given an array of integers and a positive integer k, determine the number of (i, j) pairs where i < j and ar[i] + ar[j] is divisible by k.
+
+**Input Format**: 
+- First line contains 2 space-separated integers, n and k
+- Second line contains n space-separated integers, each a value of arr[i]
+
+**Output Format**: Return the number of pairs (i, j) where i < j and ar[i] + ar[j] is evenly divisible by k
+
+**Constraints**: 
+- 2 ≤ n ≤ 100
+- 1 ≤ k ≤ 100
+- 1 ≤ ar[i] ≤ 100
+
+**Example**:
+- Input: n = 6, k = 3, ar = [1, 3, 2, 6, 1, 2]
+- Valid pairs: (0,2), (0,5), (1,5), (2,4) where indices have sums divisible by 3
+- (1+2)%3=0, (1+2)%3=0, (3+2)%3=2, (2+1)%3=0
+- Output: 5
+
+**Solution**:
 ```java
 public static int divisibleSumPairs(int n, int k, int[] ar) {
     int count = 0;
@@ -303,9 +650,30 @@ public static int divisibleSumPairs(int n, int k, int[] ar) {
     return count;
 }
 ```
+**Time Complexity**: O(n²) | **Space Complexity**: O(1)
 
 ### 17. Migratory Birds
-**Problem**: Find most frequent bird type
+**Problem**: Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+
+**Input Format**: 
+- First line contains an integer, n, the size of arr
+- Second line contains n space-separated integers, each an arr[i]
+
+**Output Format**: Return the lowest type id of the most frequently sighted birds
+
+**Constraints**: 
+- 5 ≤ n ≤ 2 × 10^5
+- It is guaranteed that each type is 1, 2, 3, 4, or 5
+
+**Example**:
+- Input: [1, 4, 4, 4, 5, 3]
+- Bird type 1: 1 sighting
+- Bird type 3: 1 sighting
+- Bird type 4: 3 sightings (most frequent)
+- Bird type 5: 1 sighting
+- Output: 4
+
+**Solution**:
 ```java
 public static int migratoryBirds(List<Integer> arr) {
     Map<Integer, Integer> frequency = new HashMap<>();
@@ -326,9 +694,29 @@ public static int migratoryBirds(List<Integer> arr) {
     return result;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1) - at most 5 bird types
 
 ### 18. Day of the Programmer
-**Problem**: Find 256th day of year
+**Problem**: Marie invented a Time Machine and wants to test it by time-traveling to visit Russia on the Day of the Programmer (the 256th day of the year) during a year in the inclusive range from 1700 to 2700.
+
+From 1700 to 1917, Russia's official calendar was the Julian calendar; since 1919 they used the Gregorian calendar system. The transition from the Julian to Gregorian calendar system occurred in 1918, when the next day after January 31st was February 14th. This means that in 1918, February 14th was the 32nd day of the year in Russia.
+
+In both calendar systems, February is the only month with a variable amount of days; it has 29 days during a leap year, and 28 days during all other years. In the Julian calendar, leap years are divisible by 4; in the Gregorian calendar, leap years are either:
+- Divisible by 400
+- Divisible by 4 and not divisible by 100
+
+**Input Format**: A single integer denoting year y
+
+**Output Format**: Return the date of the 256th day of year y in the format dd.mm.yyyy
+
+**Example**:
+- Input: 2017
+- 2017 is not a leap year, so February has 28 days
+- Days in months: Jan(31) + Feb(28) + Mar(31) + Apr(30) + May(31) + Jun(30) + Jul(31) + Aug(31) = 243
+- 256 - 243 = 13, so it's September 13th
+- Output: "13.09.2017"
+
+**Solution**:
 ```java
 public static String dayOfProgrammer(int year) {
     if (year == 1918) {
@@ -342,9 +730,32 @@ public static String dayOfProgrammer(int year) {
     return String.format("%02d.09.%d", day, year);
 }
 ```
+**Time Complexity**: O(1) | **Space Complexity**: O(1)
 
-### 19. Bill Division
-**Problem**: Check if bill split is fair
+### 19. Bill Division (Bon Appétit)
+**Problem**: Two friends Anna and Brian are having dinner at a restaurant. Anna decides she doesn't want to eat item k on the bill. They decide to split the bill evenly among the items Anna will eat. Brian wants to order item k for himself.
+
+Anna will pay for her portion of the bill and Brian will pay for his portion plus item k.
+
+Given the bill, determine if Brian charged Anna fairly or if he overcharged her.
+
+**Input Format**: 
+- First line contains two space-separated integers n and k, the number of items ordered and the 0-based index of the item that Anna didn't eat
+- Second line contains n space-separated integers bill[i] where 0 ≤ i < n
+- Third line contains an integer, b, the amount of money that Brian charged Anna for her share of the bill
+
+**Output Format**: 
+- If Brian did not overcharge Anna, print "Bon Appetit" on a new line
+- Otherwise, print the difference (i.e., b_charged - b_actual) that Brian must refund to Anna
+
+**Example**:
+- Input: bill = [3, 10, 2, 9], k = 1, b = 7
+- Anna didn't eat item 1 (cost 10), so she pays for items [3, 2, 9] = 14
+- Anna's fair share: 14/2 = 7
+- Brian charged Anna 7, which is correct
+- Output: "Bon Appetit"
+
+**Solution**:
 ```java
 public static void bonAppetit(List<Integer> bill, int k, int b) {
     int totalCost = bill.stream().mapToInt(Integer::intValue).sum();
@@ -357,9 +768,28 @@ public static void bonAppetit(List<Integer> bill, int k, int b) {
     }
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
-### 20. Sales by Match
-**Problem**: Count matching sock pairs
+### 20. Sales by Match (Sock Merchant)
+**Problem**: There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+
+**Input Format**: 
+- First line contains an integer n, the number of socks represented in ar
+- Second line contains n space-separated integers, ar[i], the colors of the socks in the pile
+
+**Output Format**: Return the total number of matching pairs of socks that John can sell
+
+**Constraints**: 
+- 1 ≤ n ≤ 100
+- 1 ≤ ar[i] ≤ 100
+
+**Example**:
+- Input: n = 9, ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+- Color counts: {10: 4, 20: 3, 30: 1, 50: 1}
+- Pairs: 4/2 + 3/2 + 1/2 + 1/2 = 2 + 1 + 0 + 0 = 3
+- Output: 3
+
+**Solution**:
 ```java
 public static int sockMerchant(int n, int[] ar) {
     Map<Integer, Integer> sockCount = new HashMap<>();
@@ -376,13 +806,32 @@ public static int sockMerchant(int n, int[] ar) {
     return pairs;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(n)
 
 ---
 
 ## Strings (21-35)
 
 ### 21. CamelCase
-**Problem**: Count words in camelCase string
+**Problem**: There is a sequence of words in CamelCase as a string of letters, s, having the following properties:
+- It is a concatenation of one or more words consisting of English letters
+- All letters in the first word are lowercase
+- For each of the subsequent words, the first letter is uppercase and rest of the letters are lowercase
+
+Given s, determine the number of words in s.
+
+**Input Format**: A single line containing string s
+
+**Output Format**: Print the number of words in string s
+
+**Constraints**: 1 ≤ |s| ≤ 10^5
+
+**Example**:
+- Input: "saveChangesInTheEditor"
+- Words: "save", "Changes", "In", "The", "Editor" (5 words)
+- Output: 5
+
+**Solution**:
 ```java
 public static int camelcase(String s) {
     int wordCount = 1;
@@ -394,9 +843,30 @@ public static int camelcase(String s) {
     return wordCount;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 22. Strong Password
-**Problem**: Check password strength
+**Problem**: Louise joined a social networking site to stay in touch with her friends. The signup page required her to input a name and a password. However, the password must be strong. The website considers a password to be strong if it satisfies the following criteria:
+- Its length is at least 6
+- It contains at least one digit
+- It contains at least one lowercase English character
+- It contains at least one uppercase English character
+- It contains at least one special character. The special characters are: !@#$%^&*()-+
+
+She typed a random string of length n in the password field but wasn't sure if it was strong. Given the string she typed, can you find the minimum number of characters she must add to make it strong?
+
+**Input Format**: 
+- First line contains an integer n, the length of the password
+- Second line contains a string consisting of characters, the password typed by Louise
+
+**Output Format**: Return an integer denoting the minimum number of characters to add
+
+**Example**:
+- Input: n = 3, password = "Ab1"
+- Missing: special character (1), minimum length 6-3=3
+- Output: max(1, 3) = 3
+
+**Solution**:
 ```java
 public static int minimumNumber(int n, String password) {
     boolean hasLower = false, hasUpper = false, hasDigit = false, hasSpecial = false;
@@ -418,9 +888,29 @@ public static int minimumNumber(int n, String password) {
     return Math.max(missing, 6 - n);
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 23. Mars Exploration
-**Problem**: Count altered SOS signals
+**Problem**: A space explorer's ship crashed on Mars! They send a series of SOS messages to Earth for help.
+
+Letters in some of the SOS messages are altered by cosmic radiation during transmission. Given the signal received by Earth as a string, s, determine how many letters of the SOS message have been changed by radiation.
+
+**Input Format**: There is one line of input: a single string, s
+
+**Output Format**: Print the number of letters in the received message that differ from the SOS message
+
+**Constraints**: 
+- 1 ≤ |s| ≤ 99
+- |s| % 3 = 0
+- s will contain only uppercase English letters
+
+**Example**:
+- Input: "SOSSPSSQSSOR"
+- Expected: "SOSSOSSOSSOS" (4 SOS messages)
+- Differences at positions: 4(P→O), 5(S→S), 6(S→S), 7(Q→S), 10(R→S)
+- Output: 3 (positions 4, 7, 10 are different)
+
+**Solution**:
 ```java
 public static int marsExploration(String s) {
     int alterations = 0;
@@ -435,9 +925,27 @@ public static int marsExploration(String s) {
     return alterations;
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
-### 24. HackerRank in a String
-**Problem**: Check if subsequence exists
+### 24. HackerRank in a String!
+**Problem**: We say that a string contains the word hackerrank if a subsequence of its characters spell the word hackerrank. Remeber that a subsequence maintains the relative order of characters selected from a sequence.
+
+More formally, let p[0], p[1], ..., p[9] be the respective indices of h, a, c, k, e, r, r, a, n, k in string s. If p[0] < p[1] < p[2] < ... < p[9], then s contains hackerrank.
+
+For each query, print YES on a new line if the string contains hackerrank, otherwise, print NO.
+
+**Input Format**: 
+- First line contains an integer q, the number of queries
+- Each of the next q lines contains a single query string s
+
+**Output Format**: For each query, print YES if s contains hackerrank, otherwise print NO
+
+**Example**:
+- Input: "haacckkerrannkk"
+- Subsequence: h-a-c-k-e-r-r-a-n-k can be found in order
+- Output: "YES"
+
+**Solution**:
 ```java
 public static String hackerrankInString(String s) {
     String target = "hackerrank";
@@ -452,9 +960,23 @@ public static String hackerrankInString(String s) {
     return targetIndex == target.length() ? "YES" : "NO";
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1)
 
 ### 25. Pangrams
-**Problem**: Check if string contains all letters
+**Problem**: A pangram is a string that contains every letter of the alphabet. Given a sentence determine whether it is a pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
+
+**Input Format**: A single line with string s
+
+**Output Format**: Print a line containing pangram if s is a pangram, otherwise print not pangram
+
+**Constraints**: 0 < length of s ≤ 10^3
+
+**Example**:
+- Input: "We promptly judged antique ivory buckles for the next prize"
+- Contains all 26 letters: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+- Output: "pangram"
+
+**Solution**:
 ```java
 public static String pangrams(String s) {
     Set<Character> letters = new HashSet<>();
@@ -468,6 +990,7 @@ public static String pangrams(String s) {
     return letters.size() == 26 ? "pangram" : "not pangram";
 }
 ```
+**Time Complexity**: O(n) | **Space Complexity**: O(1) - at most 26 letters
 
 ### 26. Weighted Uniform Strings
 **Problem**: Check weighted character queries
